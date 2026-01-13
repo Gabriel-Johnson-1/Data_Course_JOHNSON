@@ -1,0 +1,33 @@
+#### Problem 4 ####
+csv_files <-list.files(path='./Data/', pattern='.csv', full.names = TRUE)
+
+#### Problem 5 ####
+length(csv_files)
+
+#### Problem 6 ####
+df <- read.csv('./Data/wingspan_vs_mass.csv')
+
+#### Problem 7 ####
+head(df)
+
+#### Problem 8 ####
+b_files <- list.files(path='./Data/', 
+                      pattern='^[b]', 
+                      recursive = TRUE, 
+                      full.names = TRUE)
+print(b_files)
+
+#### Problem 9 ####
+for (i in 1:length(b_files)) {
+  print(readLines(b_files[i], n=1))
+}
+
+#### Problem 10 ####
+for (i in 1:length(csv_files)) {
+  print(readLines(csv_files[i], n=1))
+}
+
+
+
+
+
