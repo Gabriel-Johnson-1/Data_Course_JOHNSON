@@ -27,7 +27,4 @@ for (i in 1:length(csv_files)) {
   print(readLines(csv_files[i], n=1))
 }
 
-
-
-
-
+  
