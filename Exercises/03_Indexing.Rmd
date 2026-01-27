@@ -24,7 +24,7 @@ If:
 d = data.frame(Name = c("Betty","Bob","Susan"),
                Age = seq(20,30,length.out = 3),
                Height_cm = c(490,22,0))
-d
+head(d)
 ```
 
 What will be the value of:

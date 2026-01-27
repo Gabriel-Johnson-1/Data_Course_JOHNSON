@@ -7,7 +7,7 @@ output:
 
 **Consider a vector:**
   
-  x <- c(4,6,5,7,10,9,4,15)
+  <!-- x <- c(4,6,5,7,10,9,4,15) -->
 
 **What is the value of:**
   

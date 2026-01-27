@@ -18,6 +18,9 @@ seq(1,10,by=3)
 ## Exercise 2
 
 **Use the seq() function to generate the sequence  9, 18, 27, 36, 45.**
+```{r}
+seq(9, 45, by=9)
+```
 
 
 ## Exercise 3
@@ -64,7 +67,9 @@ rep(c(rep(x,2),y),3)
 ## Exercise 6
 **Create a sequence with values (in this order):**
 100 95 90 85 80 75 70 65 60 55 50
-
+```{r}
+seq(100, 50, by=-5)
+```
 
 ## Exercise 7
 If:

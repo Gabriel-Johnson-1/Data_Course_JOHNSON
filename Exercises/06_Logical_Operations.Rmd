@@ -27,36 +27,80 @@ xor(x == 3, x > 1) # matches ONLY ONE of the conditions...NOT BOTH
 
 ## Exercise 1
 Use logical operators to output only those rows of  mtcars  where column  mpg  is between 15 and 20 (excluding 15 and 20).
-
+```{r}
+mtcars[mtcars$mpg > 15 | mtcars$mpg < 20, ]
+```
 ## Exercise 2
 Use logical operators to output only those rows of  mtcars  where column  cyl  is equal to 6 and column  am  is not 0.
 
+```{r}
+mtcars[mtcars$cyl == 6 & mtcars$am != 0, ]
+```
+
 ## Exercise 3
 Use logical operators to output only those rows of  mtcars  where column  gear  or  carb  has the value 4.
+```{r}
+mtcars[mtcars$carb == 4 | mtcars$gear ==4, ]
+```
 
 ## Exercise 4
 Use logical operators to output only the even rows of  mtcars.
+```{r}
+mtcars[row(mtcars) %% 2 == 0, ]
+```
 
 ## Exercise 5
 Use logical operators and change every fourth element in column  mpg  to 0.
+```{r}
+mtcars$mpg[seq_len(nrow(mtcars))%%4 == 0] <- 0
+```
 
 ## Exercise 6
 Output only those rows of  mtcars  where columns  vs  and  am  have the same value 1, solve this without using  ==  operator.
+```{r}
+mtcars[mtcars$vs != 0 & mtcars$am!= 0, ]
+```
 
 ## Exercise 7
 (TRUE + TRUE) * FALSE , what does this expression evaluate to and why?
+```{r}
+(TRUE + TRUE) * FALSE
+(1 + 1) * 0
+```
 
 ## Exercise 8
 Output only those rows of  mtcars  where at least  vs  or  am  have the value 1, solve this without using  ==  or  !=.
+```{r}
+mtcars[mtcars$vs & mtcars$am, ]
+```
 
 ## Exercise 9
 Explain the difference between  | ,  || ,  &  and  &&.
+```{r}
+c1 <- c(TRUE, TRUE, FALSE, FALSE)
+c2 <- c(TRUE, FALSE, TRUE, FALSE)
+c1 | c2
+c1[4] || c2[4]
+c1 & c2
+c1[4] && c2[4]
+
+```
 
 ## Exercise 10
 Change all values that are 0 in the column  am  in  mtcars  to 2.
+```{r}
+mtcars$am[mtcars$am == 0] <- 2
+mtcars$am
+```
 
 ## Exercise 11
 Add 2 to every element in the column  vs  without using numbers.
+```{r}
+mtcars$vs <- mtcars$vs + max(mtcars$am)
+```
 
 ## Exercise 12
 Output only those rows of  data  where  vs  and  am  have different values, solve this without using  ==  or  !=.
+```{r}
+mtcars[!is.na(mtcars$vs - mtcars$am),  ]
+```
