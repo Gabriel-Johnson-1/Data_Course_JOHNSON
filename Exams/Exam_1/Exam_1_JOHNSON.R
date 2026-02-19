@@ -53,6 +53,7 @@ head(state_max_fatality_rate)
 # x-axis arranged in descending order, just like the data frame 
 # (make it a factor to accomplish this)
 # X-axis labels turned to 90 deg to be readable
+
 View(state_max_fatality_rate)
 state_max_fatality_rate %>% 
   ggplot(aes(x = factor(Province_State, levels = Province_State), 
@@ -74,16 +75,3 @@ df %>%
   ggplot(aes(x = as.Date(Last_Update), y = cum_deaths)) +
   geom_point() +
   geom_smooth()
-
-
-
-
-
-
-
-
-
-
-
-
-
