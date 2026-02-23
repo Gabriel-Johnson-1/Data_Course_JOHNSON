@@ -1,0 +1,7 @@
+My Final data analysis report will be an analysis of google maps reviews for 
+student housing apartment complexes in Utah County. It will be an anlysis of the fraudulent
+and deceptive nature of the complexes using deceptive techniques to generate fake reviews. 
+It will employ time-series data, textual data, 5 star ratings data, and an anlysis of 
+how different machine learning models perform on the dataset.
+
+
