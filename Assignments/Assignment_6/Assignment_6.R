@@ -50,22 +50,6 @@ df_mean %>%
 
 
 #### Problem 4 ####
-df %>% 
-  filter(Substrate == 'Itaconic Acid') %>% 
-  group_by(Sample.ID, Dilution, Time, Source.Type) %>%
-  summarise(Mean_absorbance = mean(Absorbance, na.rm = TRUE),
-            .groups = "drop"
-  ) %>%
-  ggplot(aes(x = Time, 
-             y = Mean_absorbance,
-             color = Sample.ID,
-             group = Sample.ID)) +
-  geom_line() +
-  facet_wrap(~Dilution, ncol = 3) +
-  labs(color = 'Sample ID') +
-  theme_minimal(base_size=18)
-
-
 p4 <- df %>% 
   filter(Substrate == 'Itaconic Acid') %>% 
   group_by(Sample.ID, Dilution, Time, Source.Type) %>%
