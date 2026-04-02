@@ -116,10 +116,11 @@ summary(mod3)
 mod4 <- lm(GrowthRate ~ Species, data = df)
 summary(mod4)
 
-mod5 <- lm(GrowthRate~Species+Light+Nitrogen+Temperature+Species, data = df)
+mod5 <- lm(GrowthRate~Species+Light+Nitrogen+Temperature, data = df)
 summary(mod5)
 
 mods <- list(mod1, mod2, mod3, mod4, mod5)
+compare_performance(mods)
 
 #### 4. Calculating the Mean Squared Error or each Model ####
 perfs <- map(mods, performance) %>% reduce(full_join)
@@ -129,6 +130,15 @@ paste('mse:', mse)
 #### 5. Select the best model ####
 best_mod <- mod5
 
-#### 6. Adds predictions based on 
+#### 6. Adds predictions based on independent variables ####
+df$mod5 <- mod5$fitted.values
+
+df %>% 
+  ggplot(aes(x = mod5, y = GrowthRate)) +
+  geom_point()
+  
+
+
+
 
 
