@@ -1,0 +1,6 @@
+#1. Are any of your predicted response values from your best model scientifically meaningless?
+I would honestly say that they were mostly meaningless because none of the models were super great at predicting anything.
+#2. Give a link to at least one resource explaining how to deal with modeling non-linear relationships in R.
+https://www.geeksforgeeks.org/r-language/non-linear-regression-in-r/
+#3. Write the code you would use to model the data found in “/Data/non_linear_relationship.csv” with a linear model (there are a few ways of doing this)
+glm(y ~ poly(x1, 3), data = df)
